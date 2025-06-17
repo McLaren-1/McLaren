@@ -1,5 +1,6 @@
 .main-of-all {
   background-color: #733d00;
+  min-height: 100vh;
 }
 
 /* Heading */
@@ -23,13 +24,13 @@
 
 /* Container Layout */
 .container {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 2rem;
   gap: 2rem;
 }
-
 .map-box {
   flex: 1;
   min-width: 600px; /* Agar peta tetap besar di tampilan lebar */
@@ -153,9 +154,26 @@ footer .copyright {
 }
 
 /* Responsive */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: center;
+  }
+
+  @media (max-width: 630px) {
+    .heading {
+      padding-top: 15rem;
+      font-size: 5rem;
+    }
+    .map-box {
+      min-width: 0;
+      width: 600px;
+    }
+    .container .map-box {
+      width: 90%;
+    }
+  }
+  .map-box iframe {
+    height: 90%;
   }
 }
