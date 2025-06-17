@@ -1,0 +1,867 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --roboto: "Roboto", sans-serif;
+  --bordercek: #ff0000 solid 3px;
+  --abuabu: #393939;
+  --orange: rgb(243, 156, 18);
+  --merriweather: "Merriweather", serif;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+/*  ini default */
+/* Footer Styles */
+.main-footer {
+  display: flex;
+  /* border: #ffff solid 3px; */
+  background-color: #0a0a0a;
+  color: #aaa;
+  text-align: center;
+  justify-content: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+.iconfooter {
+  margin-left: auto;
+  margin-right: auto;
+  /* border: solid #fff 3px; */
+  display: flex;
+  width: 5%;
+  justify-content: center;
+  height: auto;
+  gap: 2em;
+}
+.iconfooter a {
+  display: flex;
+  padding-top: 1em;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: auto;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.iconfooter a:hover {
+  transform: translateY(-5px);
+}
+
+/* --- Gaya untuk gambar <img> di dalam <a> --- */
+.iconfooter a img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+/* Gaya umum untuk body */
+body {
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+/* Header/Navbar */
+.navbar {
+  padding-left: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(243, 157, 18);
+  border-bottom: #fff solid 0.2rem;
+
+  height: 4rem;
+  position: fixed;
+  width: 100%;
+  height: 4rem;
+  z-index: 999;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0; /* Awalnya lebar border 0 */
+  height: 2px; /* Ketebalan border */
+  background-color: #fff; /* Warna border putih */
+  transition: width 0.3s ease-out;
+}
+nav ul li a:hover::after {
+  width: 100%; /* Saat di-hover, lebar border 100% */
+}
+
+/* Daftar navigasi utama */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin-right: 40rem;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+}
+
+/* Area breadcrumb */
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 1.5rem 2rem 0 2rem;
+}
+
+/* Bagian hero / konten utama */
+.hero {
+  position: relative;
+  text-align: left;
+  margin-top: -5%;
+  padding-top: 5%;
+}
+
+/* Konten tulisan di atas gambar */
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } /* Mulai dari transparan dan sedikit ke bawah */
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  } /* Berakhir pada opacity penuh dan posisi normal */
+}
+.hero-content.fade-in {
+  animation: fadeInAnimation 1s ease-out forwards;
+  opacity: 0; /* fadein Mulai dengan transparan */
+}
+
+/* Animasi untuk logo */
+.hero-content .logohome {
+  animation: fadeInAnimation 1s ease-out forwards;
+  opacity: 0; /* fadein Mulai transparan */
+  animation-delay: 0.2s;
+}
+
+/* Animasi untuk h1 (teks utama) */
+.hero-content h1 {
+  animation: fadeInAnimation 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.5s; /* Delay 0.5 detik */
+}
+
+/* Animasi untuk span di dalam h1 (sub-teks) */
+/* Penting: SPAN adalah inline element secara default, translateY mungkin tidak bekerja sempurna
+   kecuali diubah menjadi inline-block atau block. Lebih baik animasikan sebagai bagian dari h1
+   atau berikan display: inline-block; atau block; */
+.hero-content h1 span {
+  animation: fadeInAnimation 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.8s; /* Delay 0.8 detik */
+  display: inline-block; /* Penting agar transform translateY bekerja pada span */
+}
+.hero-content {
+  position: absolute;
+  top: 16%;
+  left: 5%;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  line-height: 0.5;
+}
+
+.hero-content h1 span {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+/* Gambar utama */
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hero-image video {
+  z-index: -9;
+}
+
+/* kontener 2 */
+.contener2 {
+  background-color: rgb(243, 157, 18);
+  position: relative;
+  text-align: left;
+}
+.contener2 .image-contener2 {
+  margin-left: -10%;
+  transition: transform ease-in 0.3s;
+}
+.image-contener2:hover {
+  transform: scale(1.1);
+}
+.h1000 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 2;
+}
+.image-contener2 {
+  width: 100%;
+}
+.imge {
+  width: 100%;
+}
+.logo {
+  width: 50rem;
+  height: auto;
+}
+/* tombol shop */
+.tombolbuy a {
+  text-decoration: none;
+  font-family: var(--roboto);
+  font-weight: 800;
+  color: #000000;
+}
+.tombolll {
+  margin-top: 1rem;
+  margin-left: 4rem;
+}
+.tomboll {
+  font-family: var(--roboto);
+  font-weight: 500;
+  color: #000000;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #ffffff;
+  text-decoration: none;
+}
+.tomboll:hover {
+  background-color: rgb(255, 204, 0);
+}
+/* contener3car start here */
+.kontener3car {
+  display: flex; /* Menggunakan Flexbox untuk menata item secara horizontal */
+  justify-content: space-around; /* Menyebarkan ruang kosong secara merata di antara item */
+  align-items: flex-start; /* Menjajar item ke bagian atas (sesuai tinggi konten) */
+  gap: 20px; /* Memberi jarak antar item */
+  padding: 20px;
+
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kontainer-item {
+  flex: 1; /* Membuat setiap item mengambil bagian ruang yang sama */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #e9f7fe;
+  text-align: center;
+  min-width: 250px; /* Menetapkan lebar minimum untuk setiap kontainer */
+}
+
+.kontainer-item h2 {
+  color: #333;
+  margin-top: 0;
+}
+
+.kontainer-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* contener3 start from here */
+.contener3 {
+  display: inline-block;
+  width: auto;
+  position: relative;
+  justify-content: center;
+  height: 100%;
+}
+.text-contener3 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: center;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 30%;
+  height: 100%;
+
+  padding-top: 5%;
+  padding-left: 5%;
+  background-color: #4b4b4b5e;
+
+  z-index: 3;
+}
+.text-contener3 h1 {
+  text-align: left;
+  color: #ffffff;
+  font-family: var(--roboto);
+  font-weight: 700;
+  font-size: 3rem;
+}
+.img-c3 {
+  width: 100%;
+  display: block;
+}
+.panahkanan {
+  padding-top: 3rem;
+  filter: brightness(0) invert(1); /*  buat jadi white */
+  width: 4rem; /* Sesuaikan ukuran */
+  transition: transform ease 0.3s;
+}
+.panahkanan:hover {
+  transform: scale(0.9);
+}
+
+nav ul li a.active {
+  color: #ffffff; /* Warna biru */
+  font-weight: bold;
+}
+/* animasi pergantian halaman */
+/* Animasi untuk transisi antar halaman */
+#content-container {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#content-container.fade-out {
+  opacity: 0 !important;
+  transform: translateY(20px);
+}
+
+#content-container.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0);
+}
+.logohome {
+  display: block;
+  width: 25rem;
+  margin-left: 0;
+  margin-bottom: 5%;
+}
+
+/* contener4 start from here */
+.contener4 {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+.background-putih {
+  background-color: #000000;
+  position: absolute;
+  margin-top: -1rem;
+  opacity: 10%;
+  z-index: -5;
+  width: 100%;
+  height: 30rem;
+}
+/* set font contener4 */
+
+.contener4-firts h1 {
+  font-weight: 300;
+  line-height: 0.9;
+}
+.contener4-firts h1 span {
+  font-family: var(--merriweather);
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 0.4rem;
+}
+
+/* SET IMAGE CONTENER4 */
+.firtscmleren {
+  display: flex;
+
+  width: 100%;
+  height: auto;
+  justify-content: center;
+}
+.image-firtsmcleren {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+/* setting section MClaren-news */
+.Mcleren-news-section {
+  max-width: 50rem;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.112);
+}
+
+/* Gaya untuk setiap artikel berita */
+.Berita-artikel-beranda {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 30px;
+}
+
+/* Hapus border-bottom untuk artikel terakhir jika tidak diinginkan */
+.Berita-artikel-beranda:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.news-content {
+  flex: 1;
+  padding-right: 30px; /* Jarak antara konten dan tombol */
+}
+
+.news-meta {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.news-meta span {
+  margin-right: 15px; /* Jarak antar item meta */
+}
+
+.news-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.news-description,
+.news-details {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.read-more-button {
+  background-color: transparent;
+  border: 1px solid #333;
+  color: #000000;
+  padding: 12px 25px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none; /* Untuk tag <a> */
+  display: inline-block; /*  padding <a> */
+  align-self: flex-start; /* biak ada tombol di awal */
+}
+
+.read-more-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Gaya untuk artikel dengan gambar */
+.Berita-artikel-beranda.has-image {
+  display: block; /* Gambar akan di bawah teks */
+}
+
+.Berita-artikel-beranda.has-image .news-image {
+  width: 100%;
+  height: auto;
+  display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* Flexbox untuk konten dan tombol pada artikel bawah */
+.Berita-artikel-beranda.has-image .content-and-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.Berita-artikel-beranda.has-image .news-content {
+  padding-right: 30px;
+}
+
+/* Media Queries untuk responsif */
+
+@media (max-width: 1300px) {
+  .tombolll {
+    margin-top: 3rem;
+    margin-left: 1rem;
+  }
+  .navbar {
+    height: 5rem;
+  }
+  .nav-links {
+    margin-left: 6rem;
+    gap: 5rem;
+  }
+  .navbar li a {
+    font-size: 1.2rem;
+  }
+  .contener2 .image-contener2 {
+    margin-left: -10%;
+  }
+}
+@media (max-width: 1076px) {
+  .background-putih {
+    /* untuk setting bakcground size yang ada di belakang mobil f1 */
+    height: 35rem;
+  }
+  .navbar {
+    height: 5rem;
+  }
+  .nav-links {
+    margin-left: 6rem;
+    gap: 5rem;
+  }
+  .navbar li a {
+    font-size: 1.2rem;
+  }
+
+  .hero-content {
+    display: inline-block;
+    position: absolute;
+    top: 5%;
+    left: 18%;
+  }
+  .tombolll {
+    margin-top: 2rem;
+    margin-left: 0rem;
+  }
+  .tomboll {
+    letter-spacing: 1.5px;
+    font-family: var(--roboto);
+    font-weight: 900;
+    color: #000000;
+    border-radius: 10px;
+    padding: 1.6rem;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: larger;
+  }
+  .panahkanan {
+    padding-top: 0.5rem;
+  }
+}
+@media (max-width: 992px) {
+  html {
+    font-size: 70%;
+  }
+  .background-putih {
+    /* untuk setting bakcground size yang ada di belakang mobil f1 */
+    height: 30rem;
+  }
+  .hero-content {
+    position: absolute;
+    top: 5%;
+    left: 23%;
+  }
+  .logohome {
+    margin-bottom: 5%;
+  }
+  .logoMCleren {
+    max-width: 20rem;
+  }
+  .navbar {
+    height: 7rem;
+  }
+  .nav-links {
+    margin-left: 4rem;
+    gap: 5rem;
+  }
+  .nav-links li a {
+    font-size: 1.5rem;
+  }
+  .image-contener2 {
+    margin-top: 3rem;
+    margin-left: -10%;
+    margin-right: auto;
+  }
+  .tombolll {
+    margin-top: 2rem;
+    margin-left: 0rem;
+  }
+  .tomboll {
+    letter-spacing: 1.5px;
+    font-family: var(--roboto);
+    font-weight: 900;
+    color: #000000;
+    border-radius: 10px;
+    padding: 1.6rem;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: larger;
+  }
+
+  .panahkanan {
+    padding-top: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+  /* tampilan video beranda */
+  .hero-image {
+    position: relatiave;
+    right: 40rem;
+    width: auto;
+    height: 85vh;
+    display: block;
+  }
+  .logohome {
+    margin-left: 0%;
+    margin-bottom: 5%;
+  }
+  .logoMCleren {
+    max-width: 20rem;
+  }
+  .navbar {
+    height: 7rem;
+  }
+  .nav-links {
+    position: absolute;
+    top: 7rem; /* sesuai tinggi navbar */
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    display: none;
+    padding: 1rem 0;
+    margin: 0; /* ✅ hapus margin kanan besar */
+    z-index: 999;
+  }
+  .nav-links li a {
+    font-size: 2rem;
+    gap: 0;
+    margin: 0;
+  }
+  .hero-content {
+    position: absolute;
+    top: 5%;
+    left: 18%;
+  }
+  .contener2 .image-contener2 {
+    margin-left: -10%;
+  }
+  .tombolll {
+    margin-top: 2rem;
+    margin-left: 0rem;
+  }
+  .tomboll {
+    letter-spacing: 1.5px;
+    font-family: var(--roboto);
+    font-weight: 900;
+    color: #000000;
+    border-radius: 10px;
+    padding: 1.6rem;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: larger;
+  }
+  .image-contener2 {
+    margin-top: 3rem;
+    margin-left: -8%;
+    margin-right: auto;
+  }
+  .panahkanan {
+    padding-top: 0.5rem;
+  }
+  /* section mcleren new */
+  .Mcleren-news-section {
+    margin: 20px auto;
+    padding: 15px;
+  }
+  .background-putih {
+    /* untuk setting bakcground size yang ada di belakang mobil f1 */
+    height: 30rem;
+  }
+  .Berita-artikel-beranda {
+    /* container utama berita  */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .news-content {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .news-title {
+    font-size: 20px;
+  }
+
+  .read-more-button {
+    align-self: center;
+  }
+
+  .Berita-artikel-beranda.has-image .content-and-button {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Berita-artikel-beranda.has-image .news-content {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 630px) {
+  html {
+    font-size: 40%;
+  }
+  .hero-content {
+    position: absolute;
+    top: 4%;
+    left: 23%;
+  }
+  .logohome {
+    margin-left: 0%;
+  }
+}
+@media (max-width: 480px) {
+  .logohome {
+    margin-left: 20%;
+    margin-bottom: 2%;
+  }
+  html {
+    font-size: 40%;
+  }
+  .logoMCleren {
+    max-width: 20rem;
+  }
+  .navbar {
+    height: 7rem;
+  }
+  .nav-links {
+    margin-left: 4rem;
+    gap: 2rem;
+    width: 100%;
+  }
+  .nav-links li a {
+    font-size: 1.8rem;
+  }
+  .hero-content {
+    position: absolute;
+    top: 10%;
+    left: 16%;
+  }
+  .tombolll {
+    margin-top: 2rem;
+    margin-left: 0rem;
+  }
+  .tomboll {
+    letter-spacing: 1.5px;
+    font-family: var(--roboto);
+    font-weight: 900;
+    color: #000000;
+    border-radius: 10px;
+    padding: 1.6rem;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: larger;
+  }
+  .image-contener2 {
+    margin-top: 3rem;
+    margin-left: -8%;
+    margin-right: auto;
+  }
+  .panahkanan {
+    padding-top: 0.5rem;
+  }
+}
+@media (max-width: 350px) {
+  html,
+  body {
+    font-size: 30%;
+  }
+}
+
+/* === HAMBURGER MENU === */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-right: 2rem;
+  z-index: 1000;
+}
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* RESPONSIVE MENU */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 7rem;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c06c00; /* 🟧 oranye lebih tua */
+    display: none;
+    padding: 0.5rem 0;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    border-top: 2px solid white;
+    gap: 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    margin: 0;
+    padding-bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 1em;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    width: 100%;
+    display: block;
+  }
+}

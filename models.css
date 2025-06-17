@@ -1,0 +1,530 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --roboto: "Roboto", sans-serif;
+  --bordercek: #ff0000 solid 3px;
+  --abuabu: #393939;
+}
+.main-footer {
+  width: 100vh;
+  background-color: #000000;
+}
+.footermanual {
+  background-color: #161616;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  color: #aaa;
+  text-align: center;
+  padding: 20px 0;
+
+  font-size: 0.9em;
+  width: 100%;
+  box-sizing: border-box;
+}
+.footermanual p {
+  font-size: 0.9em;
+}
+.iconfooter {
+  margin-left: auto;
+  margin-right: auto;
+  /* border: solid #fff 3px; */
+  display: flex;
+  width: 5%;
+  justify-content: center;
+  height: auto;
+  gap: 2em;
+}
+.iconfooter a {
+  display: flex;
+  padding-top: 1em;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: auto;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.iconfooter a:hover {
+  transform: translateY(-5px);
+}
+
+/* General Reset & Body Styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--roboto);
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.main-header {
+  background-color: #1a1a1a;
+  padding: 15px 0;
+  position: relative;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Hero Image (Gambar mobil utama) */
+#car-display-image {
+  position: absolute;
+  top: 0;
+  right: 20%;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform ease 0.3s; /* Transisi untuk hover */
+}
+
+#car-display-image:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(86, 86, 86, 0.8)); /* cahaa itam */
+}
+
+/* Model Selection Menu (Left Column) */
+.model-selection-menu {
+  flex: 0 0 250px;
+  padding: 40px 0 40px 60px;
+  color: #000;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.model-selection-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.model-selection-menu ul li {
+  margin-bottom: 15px; /* Jarak antar item menu */
+}
+
+.model-selection-menu ul li a {
+  text-decoration: none;
+  color: #777; /* Warna teks menu default */
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.model-selection-menu ul li a:hover,
+.model-selection-menu ul li a.active {
+  color: #000; /* Warna hitam saat hover/aktif */
+}
+
+/* Overlay Content (Right Column) */
+.overlay-content {
+  text-align: center;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-right: 60px;
+  z-index: 10;
+  max-width: 300px;
+  flex-shrink: 0;
+}
+
+.overlay-content p {
+  font-size: 1em;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.config-button {
+  background-color: transparent;
+  border: 2px solid #000;
+  color: #000;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.config-button:hover {
+  background-color: #ff8000;
+  border-color: #ff8000;
+  color: #fff;
+}
+
+.config-button .arrow {
+  font-size: 1.2em;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.config-button:hover .arrow {
+  transform: rotate(90deg);
+}
+
+/* Info Strip Section */
+.info-strip {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0rem; /* Tetap dengan 11rem atau sesuaikan agar tepat di bawah hero-section */
+  position: relative;
+  z-index: 50;
+}
+
+.info-item {
+  text-align: center;
+  margin: 10px 20px;
+  flex-basis: 200px;
+  flex-grow: 1;
+}
+
+.info-item p {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.info-item h3 {
+  font-size: 1.8em;
+  color: #fff;
+  margin: 0;
+}
+
+.info-button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 8px 15px;
+  font-size: 0.9em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.info-button:hover {
+  background-color: #ff8000;
+  border-color: #ff8000;
+  color: #000;
+}
+
+.info-button .arrow {
+  font-size: 1em;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.info-button:hover .arrow {
+  transform: rotate(90deg);
+}
+
+/* Details Section */
+.details-sectionmain {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+}
+.details-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #111;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.details-section h2 {
+  color: #ff8000;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.2em;
+}
+
+.details-section p {
+  font-size: 1.1em;
+  text-align: justify;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+/* Footer Styles */
+.main-footer {
+  background-color: #0a0a0a;
+  color: #aaa;
+  text-align: center;
+  padding: 20px 0;
+
+  font-size: 0.9em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1472px) {
+  #car-display-image {
+    left: 10%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .model-selection-menu {
+    padding-left: 30px;
+    flex-basis: 200px;
+  }
+
+  .overlay-content {
+    margin-top: 8rem;
+    margin-bottom: 28rem;
+  }
+  /* Mengatur ulang posisi gambar pada ukuran layar ini */
+  #car-display-image {
+    right: -5%; /* Sesuaikan posisi kanan pada layar lebih kecil */
+  }
+}
+@media (max-width: 1200px) {
+  #car-display-image {
+    right: -8%; /* Sesuaikan posisi kanan pada layar lebih kecil */
+  }
+}
+@media (max-width: 1076px) {
+  .config-button,
+  .info-button {
+    padding: 1rem;
+    font-size: 70%;
+  }
+
+  #car-display-image {
+    right: -8%; /* Sesuaikan posisi kanan pada layar lebih kecil */
+    top: 10%;
+    width: 90%;
+    height: auto;
+  }
+}
+@media (max-width: 992px) {
+  .hero-section {
+    height: 500px;
+  }
+  #car-display-image {
+    /* Target ID */
+    object-fit: contain; /* Agar seluruh mobil terlihat */
+    width: 80%;
+    height: auto;
+    top: auto;
+    bottom: 0;
+    left: 20%;
+    right: auto;
+  }
+  .model-selection-menu {
+    flex-basis: 150px;
+    padding-left: 20px;
+    align-self: flex-start;
+    margin-top: 30px;
+  }
+  .model-selection-menu ul li a {
+    font-size: 1em;
+  }
+  .overlay-content {
+    margin-right: 20px;
+    margin-top: 9rem;
+    padding: 15px 20px;
+  }
+}
+/* Sembunyikan indikator geser secara default */
+.swipe-indicator {
+  display: none;
+  text-align: center;
+  color: #000; /* Atau warna yang sesuai dengan tema Anda */
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  html,
+  body {
+    font-size: 2rem;
+  }
+  .model-selection-menu {
+    max-height: max-content;
+  }
+  .model-selection-menu ul {
+    padding: 0;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+
+  .model-selection-menu ul li a {
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-left: 1px solid #656565;
+  }
+  .hero-section {
+    flex-direction: column;
+    height: auto;
+    min-height: 500px;
+    padding: 8rem 0;
+  }
+
+  #car-display-image {
+    /* ngatur mobil */
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 90%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    margin: 0 auto;
+    order: 2; /* supaya gambar muncul setelah menu dan overlay di flex-column */
+    transform: none; /* Reset transform pada hover */
+  }
+
+  .model-selection-menu {
+    width: 100%;
+    padding: 0 20px 20px;
+    text-align: center;
+    align-items: center;
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    order: 1; /* Agar menu muncul pertama di flex-column */
+  }
+  .model-selection-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .model-selection-menu ul li {
+    margin-bottom: 0;
+  }
+
+  /* setting button */
+  .config-button,
+  .info-button {
+    padding: 1rem;
+    font-size: 50%;
+  }
+
+  .overlay-content {
+    position: relative;
+    margin: 20px auto;
+    max-width: 90%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    order: 3; /* Agar overlay muncul terakhir di flex-column */
+  }
+  .overlay-content p {
+    font-size: 1rem;
+  }
+  .info-strip {
+    margin-top: -30px; /* Sesuaikan margin-top responsif */
+  }
+
+  .info-item {
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .details-section {
+    margin: 20px;
+  }
+}
+@media (max-width: 630px) {
+  html,
+  body {
+    font-size: 2.6rem;
+  }
+  .model-selection-menu {
+    max-height: 7rem;
+  }
+  .model-selection-menu ul {
+    padding: 0;
+    margin-top: 3rem;
+    gap: 2rem;
+  }
+
+  .model-selection-menu ul li a {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 485px) {
+  html,
+  body {
+    font-size: 2rem;
+  }
+  .config-button,
+  .info-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+  .info-item h3 {
+    font-size: 1.5em;
+  }
+  .overlay-content p {
+    font-size: 0.9em;
+  }
+  .model-selection-menu {
+    max-height: auto;
+  }
+  .model-selection-menu ul {
+    padding: 0;
+    margin-top: 3rem;
+    gap: 0rem;
+  }
+
+  .model-selection-menu ul li a {
+    font-size: 1.8rem;
+    border: 0px solid #656565;
+  }
+}

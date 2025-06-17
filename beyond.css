@@ -1,0 +1,398 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --brand-orange: #ff8700;
+  --dark-bg: #151515;
+  --card-bg: #1e1e1e;
+  --light-text: #ffffff;
+  --grey-text: #bdbdbd;
+}
+html {
+  scroll-behavior: smooth;
+}
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 1.5rem 2rem 0 2rem;
+}
+
+/* perintah setting footer */
+.footermanual {
+  background-color: #161616;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  color: #aaa;
+  text-align: center;
+  padding: 20px 0;
+
+  font-size: 0.9em;
+  width: 100%;
+  box-sizing: border-box;
+}
+.footermanual p {
+  font-size: 0.9em;
+}
+.iconfooter {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 5%;
+  justify-content: center;
+  height: auto;
+  gap: 2em;
+}
+.iconfooter a {
+  display: flex;
+  padding-top: 1em;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: auto;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.iconfooter a:hover {
+  transform: translateY(-5px);
+}
+
+/* Mengatur gaya dasar untuk seluruh halaman (body) */
+body {
+  font-family: "Montserrat", sans-serif; /* Font utama dari Google Fonts */
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  overflow-x: hidden;
+}
+
+#hero-beyond {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #00000044;
+}
+
+#hero-imagee {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* setting halaman paling atas */
+.hero-content-beyond {
+  position: relative;
+  z-index: 1;
+  text-align: center; /* Rata tengah teks */
+  max-width: 900px; /* Batasi lebar konten teks */
+  padding: 0 20px;
+  color: #ffffff; /* Pastikan warna teks putih */
+}
+
+.hero-content-beyond h1 {
+  font-size: 4em; /* Ukuran font besar */
+  font-weight: 800; /* Lebih tebal */
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Bayangan teks untuk kontras */
+}
+
+.hero-content-beyond p {
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  color: #cccccc; /* Warna abu-abu terang */
+}
+
+.cta-button-beyond {
+  display: inline-block; /* Agar bisa menerapkan padding dan margin */
+  background-color: #ff8700;
+  color: #1a1a1a;
+  padding: 15px 40px;
+  text-decoration: none; /* Hapus garis bawah link */
+  border-radius: 5px;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button-beyond:hover {
+  background-color: #e67a00;
+  transform: translateY(-3px); /* Efek sedikit terangkat */
+}
+.fade-in {
+  animation: fadeInAnimation 1s ease-in-out forwards;
+  opacity: 0;
+}
+/* Memberi delay berbeda untuk setiap elemen agar muncul satu per satu */
+
+.hero-content-beyond h1.fade-in {
+  animation-delay: 0.1s;
+}
+.hero-content-beyond p.fade-in {
+  animation-delay: 0.3s;
+}
+.hero-content-beyond .cta-button-beyond.fade-in {
+  animation-delay: 0.6s;
+}
+
+@media (max-width: 768px) {
+  .hero-content-beyond h1 {
+    font-size: 4em;
+  }
+
+  .hero-content-beyond p {
+    font-size: 1.3em;
+  }
+
+  .cta-button-beyond {
+    padding: 12px 30px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content-beyond h1 {
+    font-size: 5em;
+  }
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } /* Keadaan awal */
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  } /* Keadaan akhir */
+}
+
+.content-section {
+  padding: 100px 5%;
+  background-color: #000000;
+}
+
+.container9 {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+  color: #ffffff;
+}
+
+.content-section h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--brand-orange);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.feature-card {
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-icon {
+  margin-bottom: 20px;
+}
+
+.card-icon img {
+  height: 60px;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--light-text);
+}
+
+.feature-card p {
+  color: var(--grey-text);
+  line-height: 1.6;
+}
+
+.dark-section {
+  background-color: #343434;
+}
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+}
+.experience-card {
+  background-color: #000000;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0);
+}
+.card-content {
+  padding: 1rem;
+}
+.card-content h3 {
+  color: #ffffff;
+}
+.card-content p {
+  color: #d6d6d6;
+}
+
+.legacy-container {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.legacy-image {
+  width: 60%;
+  flex-shrink: 0;
+}
+
+.legacy-image img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.legacy-text {
+  width: 55%;
+  position: relative;
+
+  margin-left: -80px;
+
+  background-color: var(--dark-bg);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.legacy-text h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.legacy-text h2::after {
+  margin: 15px 0 0;
+}
+.legacy-text blockquote {
+  color: #bdbdbd;
+}
+.legacy-text blockquote cite {
+  color: #858585;
+}
+.legacy-text p {
+  color: #ffffff;
+}
+.text-link {
+  color: #007bff;
+}
+
+@media (max-width: 992px) {
+  .legacy-container {
+    flex-direction: column;
+    max-width: 500px;
+  }
+  .legacy-image,
+  .legacy-text {
+    width: 100%;
+    margin-left: 0;
+  }
+  .legacy-text {
+    margin-top: -50px;
+  }
+}
+@media (max-width: 480px) {
+  .experience-grid {
+    display: inline-block;
+    width: 100%;
+  }
+  .experience-card {
+    margin-top: 1rem;
+  }
+  .card-content h3 {
+    font-size: 3em;
+  }
+  .card-content p {
+    font-size: 2em;
+  }
+  .section-subtitle {
+    font-size: 1.5em;
+  }
+  .legacy-text h2 {
+    font-size: 4em;
+  }
+  .legacy-text blockquote {
+    font-size: 2em;
+  }
+  .legacy-text p {
+    font-size: 1.6em;
+  }
+  .text-link {
+    line-height: 4rem;
+    font-size: 1.6em;
+    color: #007bff;
+  }
+}

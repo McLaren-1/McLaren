@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Models - Car Selection</title>
+    <link rel="stylesheet" href="models.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main id="content-container">
+      <section class="hero-section">
+        <div class="model-selection-menu">
+          <ul>
+            <li>
+              <a
+                href="#"
+                class="model-link active"
+                data-model="ARTURA"
+                data-image="imagesindex/images/mclerenhijaunobg.png"
+                data-power="920 CV"
+                data-speed="343 KM/H"
+                data-accel="2.7 S"
+                data-desc="The ARTURA represents the pinnacle of automotive engineering, combining raw power with exquisite design. Experience unparalleled performance and luxury."
+                >Artura</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="model-link"
+                data-model="Senna ECU Tunning"
+                data-image="imagesindex/images/merah.png"
+                data-power="850 CV"
+                data-speed="330 KM/H"
+                data-accel="2.9 S"
+                data-desc="Our Supercar model offers breathtaking performance and stunning aesthetics, designed for those who demand the ultimate thrill."
+                >Senna</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="model-link"
+                data-model="Senna Full carbon"
+                data-image="imagesindex/images/mclerensennablack.png"
+                data-power="850 CV"
+                data-speed="330 KM/H"
+                data-accel="2.9 S"
+                data-desc="Our Supercar model offers breathtaking performance and stunning aesthetics, designed for those who demand the ultimate thrill."
+                >Senna Black</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="model-link"
+                data-model="720s"
+                data-image="imagesindex/images/720s.png"
+                data-power="700 CV"
+                data-speed="310 KM/H"
+                data-accel="3.5 S"
+                data-desc="The Mcleren 720s model provides a perfect blend of high performance and long-distance comfort, ideal for grand tours."
+                >720s</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="model-link"
+                data-model="Speedtail"
+                data-image="imagesindex/images/McLarenSpeedtail.png"
+                data-power="600 CV"
+                data-speed="280 KM/H"
+                data-accel="4.0 S"
+                data-desc="Our Mcleren Speedtail combines rugged capability with luxurious comfort, offering versatility for any adventure."
+                >Speedtail</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="model-link"
+                data-model="Electric"
+                data-image="imagesindex/images/MclerenP1.png"
+                data-power="750 CV"
+                data-speed="300 KM/H"
+                data-accel="3.2 S"
+                data-desc="Experience the future with our Electric model, delivering instant torque and silent power with zero emissions."
+                >P1</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <img
+          src="imagesindex/images/mclerenhijaunobg.png"
+          alt="T Car"
+          class="hero-image"
+          id="car-display-image"
+        />
+
+        <div class="overlay-content">
+          <p>GET YOUR <span id="overlay-model-name"></span></p>
+          <button class="config-button">
+            MORE CONFIGURATION <span class="arrow">&gt;</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="info-strip">
+        <div class="info-item">
+          <button class="info-button">
+            <span id="info-strip-model-name"></span>
+            <span class="arrow">&gt;</span>
+          </button>
+          <p>MODEL INFORMATION</p>
+        </div>
+        <div class="info-item">
+          <p>MAX POWER (COMBINED ICE+EE)</p>
+          <h3 id="max-power-display">920 CV</h3>
+        </div>
+        <div class="info-item">
+          <p>MAX. SPEED</p>
+          <h3 id="max-speed-display">343 KM/H</h3>
+        </div>
+        <div class="info-item">
+          <p>0-100 KM/H</p>
+          <h3 id="accel-display">2.7 S</h3>
+        </div>
+      </section>
+
+      <section class="details-sectionmain">
+        <div class="details-section">
+          <h2 id="details-section-title">Discover the Artura</h2>
+          <p id="details-section-text">
+            The Artura represents the pinnacle of automotive engineering,
+            combining raw power with exquisite design. Experience unparalleled
+            performance and luxury.
+          </p>
+        </div>
+      </section>
+
+      <div class="footermanual">
+        <p>
+          &copy; 2025 <span id="footer-model-name"> Mclaren</span>. All rights
+          reserved.
+        </p>
+        <div class="iconfooter">
+          <a href="https://x.com" class="x-sosmed">
+            <img src="imagesindex/icon/x.png" alt="X Twitter" class="X-image" />
+          </a>
+          <a href="https://instagram.com/hdytyaa" class="ig-sosmed">
+            <img
+              src="imagesindex/icon/IG.png"
+              alt="Instagram"
+              class="iconfooter-image"
+            />
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
