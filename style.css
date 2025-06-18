@@ -865,3 +865,16 @@ nav ul li a.active {
     display: block;
   }
 }
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Lebar penuh */
+  height: 100vh; /* Tinggi penuh */
+  background-color: #fff; /* Atau warna/loading animation */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Pastikan berada di atas konten lain */
+}
