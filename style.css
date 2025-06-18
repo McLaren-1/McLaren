@@ -173,12 +173,13 @@ nav ul li a:hover::after {
 }
 
 .hero-content h1 {
-  color: rgb(255, 255, 255);
+  color: rgb(243, 157, 18);
   font-size: 4rem;
   line-height: 0.5;
 }
 
 .hero-content h1 span {
+  color: #ffff;
   font-size: 1.9rem;
   font-weight: bold;
 }
@@ -186,8 +187,8 @@ nav ul li a:hover::after {
 /* Gambar utama */
 .hero-image {
   position: relative;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100vh;
   display: block;
 }
 .hero-image video {
@@ -630,7 +631,7 @@ nav ul li a.active {
     position: relatiave;
     right: 40rem;
     width: auto;
-    height: 85vh;
+    height: 100vh;
     display: block;
   }
   .logohome {
@@ -663,8 +664,8 @@ nav ul li a.active {
   }
   .hero-content {
     position: absolute;
-    top: 5%;
-    left: 18%;
+    top: 7%;
+    left: 20%;
   }
   .contener2 .image-contener2 {
     margin-left: -10%;
@@ -738,7 +739,7 @@ nav ul li a.active {
   }
   .hero-content {
     position: absolute;
-    top: 4%;
+    top: 7%;
     left: 23%;
   }
   .logohome {
@@ -865,7 +866,6 @@ nav ul li a.active {
     display: block;
   }
 }
-
 #preloader {
   position: fixed;
   top: 0;
