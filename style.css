@@ -167,7 +167,7 @@ nav ul li a:hover::after {
 }
 .hero-content {
   position: absolute;
-  top: 16%;
+  top: 20%;
   left: 5%;
   z-index: 2;
 }
@@ -187,7 +187,8 @@ nav ul li a:hover::after {
 /* Gambar utama */
 .hero-image {
   position: relative;
-  width: auto;
+  object-fit: cover;
+  width: 100vw;
   height: 100vh;
   display: block;
 }
