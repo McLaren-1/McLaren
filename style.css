@@ -11,11 +11,13 @@
 html,
 body {
   overflow-x: hidden;
+  
 }
 /*  ini default */
 /* Footer Styles */
 .main-footer {
   display: flex;
+  margin-bottom: 0;
   /* border: #ffff solid 3px; */
   background-color: #0a0a0a;
   color: #aaa;
@@ -32,7 +34,7 @@ body {
   margin-right: auto;
   /* border: solid #fff 3px; */
   display: flex;
-  width: 5%;
+  width: 50rem;
   justify-content: center;
   height: auto;
   gap: 2em;
@@ -69,7 +71,7 @@ body {
 .navbar {
   padding-left: 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: rgb(243, 157, 18);
   border-bottom: #fff solid 0.2rem;
@@ -93,13 +95,16 @@ nav ul li a::after {
 nav ul li a:hover::after {
   width: 100%; /* Saat di-hover, lebar border 100% */
 }
+nav ul li a.active::after {
+  width: 100%;
+}
 
 /* Daftar navigasi utama */
 .nav-links {
   display: flex;
   list-style: none;
   gap: 2rem;
-  margin-right: 40rem;
+  margin-right: 30rem;
 }
 
 .nav-links a {
@@ -154,11 +159,6 @@ nav ul li a:hover::after {
   opacity: 0;
   animation-delay: 0.5s; /* Delay 0.5 detik */
 }
-
-/* Animasi untuk span di dalam h1 (sub-teks) */
-/* Penting: SPAN adalah inline element secara default, translateY mungkin tidak bekerja sempurna
-   kecuali diubah menjadi inline-block atau block. Lebih baik animasikan sebagai bagian dari h1
-   atau berikan display: inline-block; atau block; */
 .hero-content h1 span {
   animation: fadeInAnimation 1s ease-out forwards;
   opacity: 0;
@@ -169,6 +169,7 @@ nav ul li a:hover::after {
   position: absolute;
   top: 20%;
   left: 5%;
+  bottom: 10%;
   z-index: 2;
 }
 
@@ -494,7 +495,9 @@ nav ul li a.active {
   margin-top: 15px;
   margin-bottom: 20px;
 }
-
+.caption {
+  color: #5a5a5a;
+}
 /* Flexbox untuk konten dan tombol pada artikel bawah */
 .Berita-artikel-beranda.has-image .content-and-button {
   display: flex;
@@ -517,7 +520,7 @@ nav ul li a.active {
     height: 5rem;
   }
   .nav-links {
-    margin-left: 6rem;
+    margin-right: 10rem;
     gap: 5rem;
   }
   .navbar li a {
@@ -528,6 +531,9 @@ nav ul li a.active {
   }
 }
 @media (max-width: 1076px) {
+  body{
+    height: 100vh;
+  }
   .background-putih {
     /* untuk setting bakcground size yang ada di belakang mobil f1 */
     height: 35rem;
@@ -627,7 +633,7 @@ nav ul li a.active {
   html {
     font-size: 65%;
   }
-  /* tampilan video beranda */
+
   .hero-image {
     position: relatiave;
     right: 40rem;
@@ -821,8 +827,17 @@ nav ul li a.active {
   border-radius: 2px;
 }
 
-/* RESPONSIVE MENU */
+/* RESPONSIVE MENU HUMBERGER*/
 @media (max-width: 768px) {
+  nav ul li a.active::after {
+    width: 100%;
+  }
+  .navbar {
+    justify-content: space-between;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
   .menu-toggle {
     display: flex;
   }
@@ -842,9 +857,13 @@ nav ul li a.active {
     transform: translateY(-10px);
     transition: all 0.3s ease-in-out;
     border-top: 2px solid white;
-    gap: 0;
+    gap: 1rem;
   }
-
+  .nav-links li a {
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+  }
   .nav-links.show {
     display: flex;
     opacity: 1;
