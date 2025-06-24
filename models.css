@@ -18,15 +18,17 @@ body {
 body {
   font-family: var(--roboto);
   font-family: Arial, sans-serif;
-  background-color: #000;
   color: #fff;
   overflow-x: hidden;
 }
-
+.main-footer {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .main-header {
   background-color: #1a1a1a;
   padding: 15px 0;
-  position: relative;
+  position: fixed;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -120,7 +122,7 @@ body {
   font-weight: bold;
 }
 
-.config-button {
+.overlay-content .config-button {
   background-color: transparent;
   border: 2px solid #000;
   color: #000;
@@ -135,19 +137,19 @@ body {
   gap: 10px;
 }
 
-.config-button:hover {
+.overlay-content .config-button:hover {
   background-color: #ff8000;
   border-color: #ff8000;
   color: #fff;
 }
 
-.config-button .arrow {
+.overlay-content .config-button .arrow {
   font-size: 1.2em;
   transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
 
-.config-button:hover .arrow {
+.overlay-content.config-button:hover .arrow {
   transform: rotate(90deg);
 }
 
@@ -276,12 +278,13 @@ body {
   }
 }
 @media (max-width: 1076px) {
-  .config-button,
   .info-button {
     padding: 1rem;
-    font-size: 70%;
+    font-size: 1rem;
   }
-
+  .overlay-content .config-button {
+    font-size: 1rem;
+  }
   #car-display-image {
     right: -8%; /* Sesuaikan posisi kanan pada layar lebih kecil */
     top: 10%;
@@ -289,52 +292,106 @@ body {
     height: auto;
   }
 }
-@media (max-width: 992px) {
-body{
-  font-size: 1.5rem;
-}
-
-.details-section{
-  height: 19rem;
-  padding: 5rem;
-  margin: 20px;
-}
-
+@media (max-width: 1023px) {
+  body {
+    font-size: 1.5rem;
+    background-color: black;
+  }
+  .overlay-content .config-button {
+    font-size: 1.5rem;
+  }
+  .details-section {
+    height: 19rem;
+    padding: 5rem;
+    margin: 20px;
+  }
 
   .hero-section {
-    height: 500px;
-  }
-  #car-display-image {
-    /* Target ID */
-    object-fit: contain; /* Agar seluruh mobil terlihat */
-    width: 80%;
-    height: auto;
-    top: auto;
-    bottom: 0;
-    left: 20%;
-    right: auto;
+    flex-direction: column; /* Ubah tata letak menjadi kolom */
+    height: auto; /* Biarkan tinggi menyesuaikan konten */
+    min-height: 500px;
+    padding: 8rem 0;
   }
 
+  #car-display-image {
+    /* ngatur mobil */
+    position: relative; /* Penting untuk flex-direction: column */
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 110%; /* Disesuaikan untuk tampilan tablet */
+    height: auto;
+    /* max-height: 300px; Pertahankan batasan tinggi */
+    object-fit: contain;
+    margin: 0 auto; /* Pusatkan horizontal */
+    order: 2; /* supaya gambar muncul setelah menu dan overlay di flex-column */
+    transform: none; /* Reset transform pada hover */
+  }
+
+  .hero-section .model-selection-menu {
+    width: 100%;
+
+    padding: 0;
+
+    max-height: 10rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    order: 1; /* Agar menu muncul pertama di flex-column */
+  }
+  .model-selection-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+  }
+  .model-selection-menu ul li {
+    margin-bottom: 0;
+  }
+  .model-selection-menu ul li a {
+    font-size: 1.5rem;
+  }
+  /* setting button */
+  .info-button {
+    padding: 1rem;
+    font-size: 50%;
+  }
   .overlay-content {
-    margin-right: 20px;
-    margin-top: 9rem;
-    padding: 15px 20px;
+    position: relative;
+    margin: 20px auto;
+    max-width: 90%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    order: 3; /* Agar overlay muncul terakhir di flex-column */
+  }
+  .overlay-content p {
+    font-size: 1.5rem;
+  }
+
+  .info-strip {
+    margin-top: 0; /* Hapus margin-top negatif yang bisa menyebabkan masalah */
+  }
+
+  .info-item {
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .details-section {
+    margin: 20px;
+    padding: 20px;
   }
 }
-/* Sembunyikan indikator geser secara default */
-.swipe-indicator {
-  display: none;
-  text-align: center;
-  color: #000; /* Atau warna yang sesuai dengan tema Anda */
-  font-size: 0.9em;
-  margin-bottom: 10px;
-  padding: 5px 0;
-  font-weight: bold;
-}
+
 @media (max-width: 768px) {
   html,
   body {
     font-size: 2rem;
+    background-color: black;
   }
   .model-selection-menu {
     max-height: max-content;
@@ -348,7 +405,7 @@ body{
   .model-selection-menu ul li a {
     font-size: 1.5rem;
     padding: 1rem;
-    border-left: 1px solid #656565;
+    /* border-left: 1px solid #656565; */
   }
   .hero-section {
     flex-direction: column;
@@ -396,7 +453,7 @@ body{
   .config-button,
   .info-button {
     padding: 1rem;
-    font-size: 50%;
+    font-size: 2rem;
   }
 
   .overlay-content {
@@ -423,18 +480,40 @@ body{
   .details-section {
     margin: 20px;
     padding: 20px;
+  }
 }
 @media (max-width: 630px) {
   html,
   body {
-    font-size: 2.6rem;
+    font-size: 1.8rem;
+    background-color: black;
   }
-  .model-selection-menu {
-    max-height: 7rem;
+  /* Details Section */
+  .details-sectionmain {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+  }
+  .details-section {
+    max-width: 80rem;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  }
+
+  body {
+    height: 100vh;
+  }
+
+  .hero-section .model-selection-menu {
+    max-height: 18rem;
   }
   .model-selection-menu ul {
     padding: 0;
-    margin-top: 3rem;
+    margin-top: 0rem;
     gap: 2rem;
   }
 
@@ -445,12 +524,15 @@ body{
 @media (max-width: 485px) {
   html,
   body {
-    font-size: 2rem;
+    font-size: 2.3rem;
+    background-color: black;
   }
-  .config-button,
   .info-button {
     padding: 8px 15px;
-    font-size: 0.9em;
+    font-size: 1em;
+  }
+  .overlay-content .config-button {
+    font-size: 1.5rem;
   }
   .info-item h3 {
     font-size: 1.5em;
@@ -458,7 +540,7 @@ body{
   .overlay-content p {
     font-size: 0.9em;
   }
-  .model-selection-menu {
+  .hero-section .model-selection-menu {
     max-height: auto;
   }
   .model-selection-menu ul {
@@ -471,5 +553,4 @@ body{
     font-size: 1.8rem;
     border: 0px solid #656565;
   }
-}
 }
