@@ -144,7 +144,6 @@ nav ul li a.active {
   position: relative;
   text-align: left;
   overflow: hidden;
-
 }
 
 /* Konten tulisan di atas gambar */
@@ -203,16 +202,13 @@ nav ul li a.active {
 }
 
 /* Gambar utama */
-.hero-image {
+.hero-image9 {
   filter: brightness(70%);
   position: relative;
   object-fit: cover;
   width: 100vw;
   height: 100vh;
   display: block;
-}
-.hero-image video {
-  z-index: -9;
 }
 
 /* kontener 2 */
