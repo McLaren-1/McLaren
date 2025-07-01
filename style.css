@@ -17,7 +17,6 @@ body {
 .main-footer {
   display: flex;
   margin-bottom: 0;
-  /* border: #ffff solid 3px; */
   background-color: #0a0a0a;
   color: #aaa;
   text-align: center;
@@ -29,24 +28,23 @@ body {
   flex-direction: column;
 }
 .iconfooter {
-  margin-left: auto;
-  margin-right: auto;
   /* border: solid #fff 3px; */
   display: flex;
-  width: 50rem;
+  width: 100%;
   justify-content: center;
-  height: 5rem;
+  height: 2rem;
+  padding-top: 0.5rem;
   gap: 2em;
 }
 .iconfooter a {
   display: flex;
-  padding-top: 1em;
   justify-content: center;
   align-items: center;
-  width: 2em;
-  height: auto;
   text-decoration: none;
   transition: transform 0.3s ease;
+  /* border: var(--bordercek); */
+  height: 100%;
+  width: auto;
 }
 
 .iconfooter a:hover {
@@ -55,9 +53,8 @@ body {
 
 /* --- Gaya untuk gambar <img> di dalam <a> --- */
 .iconfooter a img {
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
 }
 /* Gaya umum untuk body */
 body {
@@ -749,7 +746,14 @@ nav ul li a.active {
     padding-right: 0;
     margin-bottom: 20px;
   }
+
+  .iconfooter {
+    /* border: solid #fff 3px; */
+    height: 3rem;
+    padding-top: 0.5rem;
+  }
 }
+
 @media (max-width: 630px) {
   html {
     font-size: 40%;
@@ -858,7 +862,7 @@ nav ul li a.active {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    background-color: #c06c00; 
+    background-color: #c06c00; /* 🟧 oranye lebih tua */
     display: none;
     padding: 0.5rem 0;
     z-index: 999;
@@ -895,6 +899,7 @@ nav ul li a.active {
     display: block;
   }
 }
+
 #preloader {
   position: fixed;
   top: 0;
