@@ -36,29 +36,6 @@ html {
 .footermanual p {
   font-size: 0.9em;
 }
-.iconfooter {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  width: 5%;
-  justify-content: center;
-  height: auto;
-  gap: 2em;
-}
-.iconfooter a {
-  display: flex;
-  padding-top: 1em;
-  justify-content: center;
-  align-items: center;
-  width: 2em;
-  height: auto;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.iconfooter a:hover {
-  transform: translateY(-5px);
-}
 
 /* Mengatur gaya dasar untuk seluruh halaman (body) */
 body {
